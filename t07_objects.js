@@ -2,15 +2,15 @@
 //t07_objects
 /********************************************************/
 
-var circle = {
-xPos: '50',
-yPos: '50',
-speedX: '5',
-speedY: '7',
-diameter: '100',
+var ball = {
+xPos: 50,
+yPos: 50,
+speedX: 5,
+speedY: 7,
+diameter: 50,
 };
 //Circle 2 Object
-var circle1 = {
+circle1 = {
 x: 70,
 y: 70,
 speedX: 5,
@@ -26,8 +26,21 @@ function setup() {
 function draw() {
   background(220);
   // 1st ciccle
-ellipse(75,50,100,100)
-ellipse(circle.xPos, circle.yPos, circle.diameter, circle.diameter )
 
-  
+ellipse(ball.xPos, ball.yPos, ball.diameter)
+
+   if(ball.xPos >=  (width - (ball.diameter / 2))){
+      ball.speedX = ball.speedX * -1
+   }else if(ball.xPos <= (((width - width) + (ball.diameter / 2)))){
+      ball.speedX = ball.speedX * -1
+   }
+
+   if(ball.yPos >=  (height - (ball.diameter / 2))){
+      ball.speedY = ball.speedY * -1
+   }else if(ball.yPos <= (((height - height) + (ball.diameter / 2)))){
+      ball.speedY = ball.speedY * -1
+   }
+   ball.xPos = ball.xPos + ball.speedX
+   ball.yPos = ball.yPos + ball.speedY
+   
 }
