@@ -47,8 +47,8 @@ function setup() {
     }
   }
   // Creating a slider
-  slider = createSlider(50, 200, 0, 1);
-  slider.position(10, 10)
+  sliderCBallSize = createSlider(50, 200, 0, 1);
+  sliderCBallSize.position(10, 10)
 }
 // Draws all the function called in this loop
 function draw() {
@@ -57,11 +57,11 @@ function draw() {
     ball[i].move();
     ball[i].display();
     ball[i].bounce();
-    // Increases the ball size
-    ball[i].diameter = slider.value()
   }
 }
 
+
+function 
 //Function to make the ball
 function m_ball(x, y, diameter) {
   ellipse(x, y, diameter);
